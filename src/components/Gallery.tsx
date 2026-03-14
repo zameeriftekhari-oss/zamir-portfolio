@@ -1,5 +1,7 @@
 import { useState, useCallback } from "react";
 import { MdClose, MdArrowOutward, MdPictureAsPdf } from "react-icons/md";
+
+
 import "./styles/Gallery.css";
 
 type Category = "all" | "products" | "designs" | "concepts";
@@ -41,14 +43,14 @@ type GalleryItem = VisualItem | PdfItem | ConceptItem;
 
 const items: GalleryItem[] = [
 
-  // ── LOGOS / BRANDING ─────────────────────────────────────────────────────
+  // ── LOGOS / BRANDING ──────────────────────────────────────────────────────
   {
     type: "visual",
     id: 1,
     title: "Alnair Pharmaceutical",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/alnair.png",
+    image: "/images/Gallery/logos/alnair.png",
     description: "Brand identity for a pharmaceutical company — clean, medical, and trustworthy.",
     span: "normal",
   },
@@ -58,7 +60,7 @@ const items: GalleryItem[] = [
     title: "BRYNQ",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/brynq.png",
+    image: "/images/Gallery/logos/brynq.png",
     description: "Bold 3D embossed logo with a tactical, modern aesthetic — wall-mounted mockup.",
     span: "normal",
   },
@@ -68,7 +70,7 @@ const items: GalleryItem[] = [
     title: "Dechome",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/dechome.png",
+    image: "/images/Gallery/logos/dechome.png",
     description: "Gold foil luxury real estate logo — premium feel on dark textured paper.",
     span: "normal",
   },
@@ -78,7 +80,7 @@ const items: GalleryItem[] = [
     title: "Fincare Marketing",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/fincare.png",
+    image: "/images/Gallery/logos/fincare.png",
     description: "Financial services brand identity — shield, growth chart, and trust-first palette.",
     span: "normal",
   },
@@ -88,7 +90,7 @@ const items: GalleryItem[] = [
     title: "Sarsan Aviation Academy",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/sarsan_aviation.png",
+    image: "/images/Gallery/logos/sarsan_aviation.png",
     description: "Intricately detailed typographic logo — Arabic-inspired geometric letterforms for an aviation academy.",
     span: "tall",
   },
@@ -98,7 +100,7 @@ const items: GalleryItem[] = [
     title: "Sarsan Contracting",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/sarsan_contracting.png",
+    image: "/images/Gallery/logos/sarsan_contracting.png",
     description: "Geometric 3D 'S' monogram on a circular gradient — bold, structural, professional.",
     span: "normal",
   },
@@ -108,7 +110,7 @@ const items: GalleryItem[] = [
     title: "Siddhant Arts",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/siddhant_arts.png",
+    image: "/images/Gallery/logos/siddhant_arts.png",
     description: "Watercolour-style logo for an arts studio — treble clef meets pen nib with botanical accents.",
     span: "wide",
   },
@@ -118,7 +120,7 @@ const items: GalleryItem[] = [
     title: "United Design Studio",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/uds.png",
+    image: "/images/Gallery/logos/uds.png",
     description: "Elegant silver-chrome emblem for an architecture & interior firm — regal and refined.",
     span: "normal",
   },
@@ -128,56 +130,10 @@ const items: GalleryItem[] = [
     title: "Urban Essentails",
     category: "designs",
     tag: "Logo Design",
-    image: "/images/gallery/logos/urban_essentails.png",
+    image: "/images/Gallery/logos/urban_essentails.png",
     description: "Teal and copper 3D monogram — rich, modern identity for a lifestyle brand.",
     span: "normal",
   },
-
-  // ── PRODUCTS ─────────────────────────────────────────────────────────────
-  // NOTE: Add your product images to /public/images/gallery/products/
-  // after extracting Bar_accessories.rar, boxes.rar, islami_art.rar, mandala.rar
-  // Then uncomment and fill in the image paths below:
-
-  // {
-  //   type: "visual",
-  //   id: 10,
-  //   title: "Islamic Wall Art Collection",
-  //   category: "products",
-  //   tag: "CNC Laser Cut",
-  //   image: "/images/gallery/products/islamic_art_1.jpg",
-  //   description: "CNC laser-cut acrylic & MDF Islamic calligraphy wall art — available in multiple finishes.",
-  //   span: "wide",
-  // },
-  // {
-  //   type: "visual",
-  //   id: 11,
-  //   title: "Mandala Wall Art",
-  //   category: "products",
-  //   tag: "CNC Laser Cut",
-  //   image: "/images/gallery/products/mandala_1.jpg",
-  //   description: "Multi-layer mandala panels CNC-cut in wood — intricate geometric precision at scale.",
-  //   span: "normal",
-  // },
-  // {
-  //   type: "visual",
-  //   id: 12,
-  //   title: "Bar Accessories",
-  //   category: "products",
-  //   tag: "Product Design",
-  //   image: "/images/gallery/products/bar_1.jpg",
-  //   description: "Decorative bar sets — CNC-cut wine holders, glass stands, and bottle racks.",
-  //   span: "normal",
-  // },
-  // {
-  //   type: "visual",
-  //   id: 13,
-  //   title: "Wooden Box Collection",
-  //   category: "products",
-  //   tag: "Product Design",
-  //   image: "/images/gallery/products/box_1.jpg",
-  //   description: "Laser-engraved gift boxes in MDF and plywood — Eid Mubarak, floral, and bespoke designs.",
-  //   span: "normal",
-  // },
 
   // ── PDF DOCUMENTS ─────────────────────────────────────────────────────────
   {
@@ -187,7 +143,7 @@ const items: GalleryItem[] = [
     category: "products",
     tag: "Product Catalogue",
     description: "Full 41-page corporate gifting catalogue — 1000+ SKUs including hampers, wall décor, eco gifts, tech accessories, and branding techniques.",
-    pdfUrl: "/docs/zuaad_portfolio.pdf",
+    pdfUrl: "/Docs/Zuaad Portfolio 3mb.pdf",
     previewNote: "41 pages • Corporate Gifting • Wall Art • Tech Accessories",
   },
   {
@@ -197,28 +153,28 @@ const items: GalleryItem[] = [
     category: "concepts",
     tag: "Business Plan",
     description: "Complete business plan for Innovast — an AI-powered startup idea marketplace connecting innovators, investors and mentors with blockchain IPR protection.",
-    pdfUrl: "/docs/innovast.pdf",
+    pdfUrl: "/Docs/Innovast final.pdf",
     previewNote: "12 pages • AI Platform • Startup Ecosystem • $4.5T Market",
   },
   {
     type: "pdf",
     id: 22,
-    title: "Sovereign Scale: Flare Gas Utilization",
+    title: "Sarsan Circular Energy Holdings",
     category: "concepts",
-    tag: "Research Paper",
-    description: "Technical research on converting 20–30 bcm/year of flare gas into energy, treating 4M BPD of produced water, and extracting 25 ktpa battery-grade lithium — $2.45B annual revenue model.",
-    pdfUrl: "/docs/sovereign_scale.pdf",
-    previewNote: "12 pages • Energy Research • $9–13B NPV • Gulf Region",
+    tag: "Business Plan",
+    description: "Strategic business plan for Sarsan Circular Energy Holdings — energy infrastructure, circular economy systems, and sustainable operations.",
+    pdfUrl: "/Docs/SARSAN CIRCULAR ENERGY HOLDINGS.pdf",
+    previewNote: "Business Plan • Energy • Circular Economy",
   },
   {
     type: "pdf",
     id: 23,
-    title: "Khurafaat — Brand & Design Concept",
-    category: "designs",
-    tag: "Brand Design",
-    description: "Deep-dive into the Khurafaat brand identity — typographic system inspired by Japanese letterforms, emotional design through iconography, and colour philosophy.",
-    pdfUrl: "/docs/khurafaat.pdf",
-    previewNote: "Brand Identity • Typography • Concept Design",
+    title: "AEVA — Autonomous Economic Value Architecture",
+    category: "concepts",
+    tag: "Research Paper",
+    description: "Full research draft on AEVA — autonomous economic value systems, decentralised networks, and next-generation platform architecture.",
+    pdfUrl: "/Docs/AEVA final draft.pdf",
+    previewNote: "Research Draft • Decentralised Systems • Future Tech",
   },
 
   // ── CONCEPT CARDS ─────────────────────────────────────────────────────────
@@ -272,7 +228,6 @@ const Gallery = () => {
         </p>
       </div>
 
-      {/* Filter bar */}
       <div className="gallery-filters">
         {FILTERS.map((f) => (
           <button
@@ -286,7 +241,6 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Masonry grid */}
       <div className="gallery-masonry">
         {filtered.map((item) => {
           if (item.type === "visual") {
@@ -313,9 +267,7 @@ const Gallery = () => {
           if (item.type === "pdf") {
             return (
               <div key={item.id} className="gallery-card gallery-card--pdf">
-                <div className="gallery-pdf-icon">
-                  <MdPictureAsPdf />
-                </div>
+                <div className="gallery-pdf-icon"><MdPictureAsPdf /></div>
                 <span className="gallery-tag">{item.tag}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -336,7 +288,6 @@ const Gallery = () => {
             );
           }
 
-          // concept
           return (
             <div key={item.id} className="gallery-card gallery-card--concept">
               <div className="gallery-concept-icon">{item.icon}</div>
@@ -344,13 +295,8 @@ const Gallery = () => {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gallery-concept-link"
-                  data-cursor="disable"
-                >
+                <a href={item.link} target="_blank" rel="noopener noreferrer"
+                  className="gallery-concept-link" data-cursor="disable">
                   View <MdArrowOutward />
                 </a>
               )}
@@ -359,21 +305,13 @@ const Gallery = () => {
         })}
       </div>
 
-      {/* Lightbox */}
       {lightbox && (
         <div className="gallery-lightbox" onClick={closeLightbox}>
-          <button
-            className="gallery-lightbox-close"
-            onClick={closeLightbox}
-            data-cursor="disable"
-            aria-label="Close"
-          >
+          <button className="gallery-lightbox-close" onClick={closeLightbox}
+            data-cursor="disable" aria-label="Close">
             <MdClose />
           </button>
-          <div
-            className="gallery-lightbox-inner"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="gallery-lightbox-inner" onClick={(e) => e.stopPropagation()}>
             <img src={lightbox.image} alt={lightbox.title} />
             <div className="gallery-lightbox-info">
               <span className="gallery-tag">{lightbox.tag}</span>
