@@ -23,7 +23,7 @@ export default function setSplitText() {
     para.classList.add("visible");
     if (para.anim) {
       para.anim.progress(1).kill();
-      para.split?.revert();
+      para.split!.revert();
     }
 
     para.split = new SplitText(para, {
@@ -51,7 +51,7 @@ export default function setSplitText() {
   titles.forEach((title: ParaElement) => {
     if (title.anim) {
       title.anim.progress(1).kill();
-      title.split?.revert();
+      title.split!.revert();
     }
     title.split = new SplitText(title, {
       type: "chars,lines",
