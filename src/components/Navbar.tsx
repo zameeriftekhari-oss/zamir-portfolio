@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { MdFileDownload } from "react-icons/md";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
@@ -39,19 +40,26 @@ const Navbar = () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
           ZI
         </a>
+
         <a
-          href="mailto:zamir.iftekhari@gmail.com"
-          className="navbar-connect"
+          href="/resume/Zamir-Iftekhari-Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="navbar-resume"
           data-cursor="disable"
+          aria-label="Open Resume"
         >
-          zamir.iftekhari@gmail.com
+          <MdFileDownload />
+          <span>Resume</span>
         </a>
+
         <ul>
           <li>
             <a data-href="#about" href="#about">
@@ -61,6 +69,11 @@ const Navbar = () => {
           <li>
             <a data-href="#work" href="#work">
               <HoverLinks text="WORK" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#creations" href="#creations">
+              <HoverLinks text="CREATIONS" />
             </a>
           </li>
           <li>
