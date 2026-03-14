@@ -2,7 +2,6 @@ import { useState, useCallback } from "react";
 import { MdClose, MdArrowOutward } from "react-icons/md";
 import "./styles/Gallery.css";
 
-type ItemType = "visual" | "concept";
 type Category = "all" | "products" | "designs" | "concepts";
 
 interface VisualItem {
