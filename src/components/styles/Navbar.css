@@ -81,3 +81,42 @@
     font-size: 18px;
   }
 }
+
+/* ── Resume Button ── */
+.navbar-resume {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--accentColor);
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  padding: 6px 14px;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.navbar-resume svg {
+  font-size: 15px;
+}
+
+.navbar-resume:hover {
+  background: rgba(94, 234, 212, 0.1);
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+}
+
+@media only screen and (max-width: 499px) {
+  .navbar-resume span {
+    display: none;
+  }
+  .navbar-resume {
+    padding: 6px 10px;
+  }
+}
