@@ -1,7 +1,5 @@
 import { useState, useCallback } from "react";
 import { MdClose, MdArrowOutward, MdPictureAsPdf } from "react-icons/md";
-
-
 import "./styles/Gallery.css";
 
 type Category = "all" | "products" | "designs" | "concepts";
@@ -41,7 +39,68 @@ interface ConceptItem {
 
 type GalleryItem = VisualItem | PdfItem | ConceptItem;
 
+// Helper to generate product image items for a category
+const makeProductImages = (
+  folder: string,
+  titlePrefix: string,
+  tag: string,
+  description: string,
+  count: number,
+  startId: number,
+  ext: string = "jpg"
+): VisualItem[] =>
+  Array.from({ length: count }, (_, i) => ({
+    type: "visual" as const,
+    id: startId + i,
+    title: `${titlePrefix} — ${i + 1}`,
+    category: "products" as const,
+    tag,
+    image: `/images/Gallery/products/${folder}/${i + 1}.${ext}`,
+    description,
+    span: i === 0 ? "wide" : "normal" as "wide" | "normal",
+  }));
+
 const items: GalleryItem[] = [
+
+  // ── PRODUCTS: ISLAMIC ART (8 images) ─────────────────────────────────────
+  ...makeProductImages(
+    "islamic_art",
+    "Islamic Wall Art",
+    "CNC Laser Cut",
+    "CNC laser-cut acrylic & MDF Islamic calligraphy wall art — available in multiple finishes and sizes.",
+    8,
+    100
+  ),
+
+  // ── PRODUCTS: MANDALA ART (8 images) ─────────────────────────────────────
+  ...makeProductImages(
+    "mandala",
+    "Mandala Wall Art",
+    "CNC Laser Cut",
+    "Multi-layer mandala panels CNC-cut in wood — intricate geometric precision at scale.",
+    8,
+    200
+  ),
+
+  // ── PRODUCTS: BAR ACCESSORIES (8 images) ─────────────────────────────────
+  ...makeProductImages(
+    "bar_accessories",
+    "Bar Accessories",
+    "Product Design",
+    "Decorative bar sets — CNC-cut wine holders, glass stands and bottle racks.",
+    8,
+    300
+  ),
+
+  // ── PRODUCTS: BOXES (8 images) ────────────────────────────────────────────
+  ...makeProductImages(
+    "boxes",
+    "Wooden Box Collection",
+    "Product Design",
+    "Laser-engraved gift boxes in MDF and plywood — Eid Mubarak, floral and bespoke designs.",
+    8,
+    400
+  ),
 
   // ── LOGOS / BRANDING ──────────────────────────────────────────────────────
   {
@@ -181,20 +240,20 @@ const items: GalleryItem[] = [
   {
     type: "concept",
     id: 30,
-    title: "AEVA — Autonomous Economic Value Architecture",
-    category: "concepts",
-    tag: "Research Concept",
-    description: "Framework exploring autonomous economic agents and decentralised value exchange in next-generation digital economies.",
-    icon: "◈",
-  },
-  {
-    type: "concept",
-    id: 31,
     title: "Vibra — Social Commerce Network",
     category: "concepts",
     tag: "App Concept",
     description: "Platform blending social discovery with direct-to-consumer commerce — bridging creators, products, and communities.",
     icon: "◉",
+  },
+  {
+    type: "concept",
+    id: 31,
+    title: "Innovast — Idea Marketplace",
+    category: "concepts",
+    tag: "Platform Concept",
+    description: "AI-powered marketplace connecting innovators, investors and mentors. Blockchain IPR protection with micro-fee accessibility targeting the $4.5T startup ecosystem.",
+    icon: "◎",
   },
 ];
 
@@ -295,8 +354,13 @@ const Gallery = () => {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               {item.link && (
-                <a href={item.link} target="_blank" rel="noopener noreferrer"
-                  className="gallery-concept-link" data-cursor="disable">
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gallery-concept-link"
+                  data-cursor="disable"
+                >
                   View <MdArrowOutward />
                 </a>
               )}
@@ -307,11 +371,18 @@ const Gallery = () => {
 
       {lightbox && (
         <div className="gallery-lightbox" onClick={closeLightbox}>
-          <button className="gallery-lightbox-close" onClick={closeLightbox}
-            data-cursor="disable" aria-label="Close">
+          <button
+            className="gallery-lightbox-close"
+            onClick={closeLightbox}
+            data-cursor="disable"
+            aria-label="Close"
+          >
             <MdClose />
           </button>
-          <div className="gallery-lightbox-inner" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="gallery-lightbox-inner"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img src={lightbox.image} alt={lightbox.title} />
             <div className="gallery-lightbox-info">
               <span className="gallery-tag">{lightbox.tag}</span>
