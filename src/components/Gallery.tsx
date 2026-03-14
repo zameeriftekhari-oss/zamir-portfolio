@@ -55,7 +55,7 @@ const makeProductImages = (
     title: `${titlePrefix} — ${i + 1}`,
     category: "products" as const,
     tag,
-    image: `/images/Gallery/products/${folder}/${i + 1}.${ext}`,
+    image: `/images/Gallery/logos/products/${folder}/${i + 1}.${ext}`,
     description,
     span: i === 0 ? "wide" : "normal" as "wide" | "normal",
   }));
