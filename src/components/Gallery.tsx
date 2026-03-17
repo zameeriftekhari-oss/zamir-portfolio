@@ -151,7 +151,7 @@ const items: GalleryItem[] = [
     tag: "Logo Design",
     image: "/images/Gallery/logos/sarsan_aviation.png",
     description: "Intricately detailed typographic logo — Arabic-inspired geometric letterforms for an aviation academy.",
-    span: "tall",
+    span: "normal",
   },
   {
     type: "visual",
