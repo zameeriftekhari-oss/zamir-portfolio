@@ -18,13 +18,13 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Founder & Strategy Lead</h4>
+                <h4>Senior Designer & Strategist</h4>
                 <h5>Zuaad Pvt Ltd</h5>
               </div>
               <h3>2018 — Present</h3>
             </div>
             <p>
-              Founded and scaled a design-to-manufacturing company focused on
+              Led design and product strategy for a design-to-manufacturing company focused on
               wall décor, corporate gifting, and customized consumer products.
               Built a portfolio of 1,000+ SKUs while leading product strategy,
               manufacturing workflows, and multi-channel e-commerce operations
@@ -58,13 +58,13 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Founder & Digital Operations Lead</h4>
+                <h4>Senior Designer & Strategist</h4>
                 <h5>Zuaad Tech</h5>
               </div>
               <h3>Parallel Venture</h3>
             </div>
             <p>
-              Built and operated a digital services venture delivering 200+
+              Led a digital services team delivering 200+
               websites and digital products for startups and SMEs. Led
               multidisciplinary teams of designers and developers while managing
               product delivery, client acquisition, UX strategy, and digital
