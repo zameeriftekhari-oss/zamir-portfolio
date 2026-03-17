@@ -91,14 +91,17 @@
   width: 100%;
   display: block;
   line-height: 0;
+  height: 260px;
+  overflow: hidden;
 }
 
 .gallery-card--visual .gallery-card-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   transition: transform 0.5s ease;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery-card--visual:hover .gallery-card-img img {
@@ -110,9 +113,8 @@
   column-span: all;
 }
 
-.gallery-card--tall .gallery-card-img img {
-  min-height: 360px;
-  object-fit: cover;
+.gallery-card--tall .gallery-card-img {
+  height: 360px;
 }
 
 /* ── Card Overlay ── */
